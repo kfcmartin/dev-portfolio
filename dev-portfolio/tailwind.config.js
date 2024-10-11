@@ -2,7 +2,17 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customGray: "#F2F3F4",
+        customTeal: "#28B3A3",
+        customTealDark: "#168073",
+      },
+      fontFamily: {
+        rubik: ["Rubik", "sans-serif"],
+        satisfy: ["Satisfy", "cursive"],
+      },
+    },
   },
   plugins: [],
 };
