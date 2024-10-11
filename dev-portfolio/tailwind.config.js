@@ -7,6 +7,7 @@ module.exports = {
         customGray: "#F2F3F4",
         customTeal: "#28B3A3",
         customTealDark: "#168073",
+        customTealLight: "#81CEBC",
       },
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],
