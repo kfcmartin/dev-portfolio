@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
   return (
-    <header className="flex fixed justify-between items-center pt-9 px-14 z-10 relative">
+    <header className="flex sticky top-0 justify-between items-center pt-9 px-14 z-20 relative">
       <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-satisfy text-customTeal">
         <a href="/">K</a>
       </div>
