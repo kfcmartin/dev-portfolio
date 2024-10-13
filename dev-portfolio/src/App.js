@@ -37,13 +37,13 @@ function App() {
       <Header />
       <div
         ref={sceneEl}
-        className="flex items-center justify-center relative h-screen px-3 -mt-20 overflow-hidden"
+        className="flex items-center justify-center relative h-screen px-3 -mt-14 overflow-hidden"
       >
         <img
           src={largeKeys}
           alt=""
           data-depth="0.80"
-          className="absolute inset-0 w-full h-full object-contain top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          className="absolute inset-0 w-[85%] h-full object-contain top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         />
         <img
           src={smallKeys}
@@ -54,17 +54,17 @@ function App() {
       </div>
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
         <div className="text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[65px] font-rubik font-bold text-customTeal">
+          <h1 className="text-[5vw] font-rubik font-bold text-customTeal">
             👋 Hi, I'm Keith 👋
           </h1>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-rubik text-customTealLight mt-1">
+          <h2 className="text-[3vw] font-rubik text-customTealLight">
             &lt;Junior Developer/&gt;
           </h2>
         </div>
         <img
           src={scrollDown}
           alt=""
-          className="w-[5vw] absolute bottom-10 sm:relative sm:top-[3vw]"
+          className="w-[5%] absolute bottom-10 sm:relative sm:top-[1vw]"
         />
       </div>
     </div>
