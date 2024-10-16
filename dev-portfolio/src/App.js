@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative bg-customGray min-h-screen">
+    <div className="scrollable-element overflow-auto relative bg-customGray min-h-screen">
       {" "}
       <div
         className="absolute inset-0"
@@ -37,7 +37,7 @@ function App() {
       <Header />
       <div
         ref={sceneEl}
-        className="flex items-center justify-center relative h-screen px-3 -mt-14 overflow-hidden"
+        className="flex items-center justify-center relative h-screen px-3 -mt-10 overflow-hidden"
       >
         <img
           src={largeKeys}
