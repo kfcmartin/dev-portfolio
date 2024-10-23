@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import "./App.css";
-import background from "./assets/background.png";
-import largeKeys from "./assets/large-keys.png";
-import smallKeys from "./assets/small-keys.png";
-import scrollDown from "./assets/scroll-down.png";
+import keys from "./assets/keys.png";
 import Header from "./Header";
+import About from "./pages/About";
 import Parallax from "parallax-js";
+import { motion } from "framer-motion";
 
 function App() {
   const sceneEl = useRef(null);
@@ -21,51 +20,52 @@ function App() {
     return () => parallaxInstance.disable();
   }, []);
 
+  const floatingAnimation = {
+    y: ["0%", "1%", "0%"],
+    transition: {
+      duration: 5,
+      ease: "easeInOut",
+      repeat: Infinity,
+    },
+  };
+
   return (
-    <div className="scrollable-element overflow-auto relative bg-customGray min-h-screen">
-      {" "}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url(${background})`,
-          backgroundRepeat: "repeat",
-          backgroundSize: "cover",
-          opacity: 0.38,
-          zIndex: 0,
-        }}
-      />
+    <div className="parent relative min-h-screen">
       <Header />
       <div
         ref={sceneEl}
-        className="flex items-center justify-center relative h-screen px-3 -mt-10 overflow-hidden"
+        className="flex items-center justify-center relative h-screen px-3 overflow-hidden -mt-8"
       >
-        <img
-          src={largeKeys}
-          alt=""
-          data-depth="0.80"
-          className="absolute inset-0 w-[85%] h-full object-contain top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-        />
-        <img
-          src={smallKeys}
-          alt=""
-          data-depth="0.40"
-          className="absolute inset-0 w-full h-full object-contain top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-        />
-      </div>
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-        <div className="text-center">
-          <h1 className="text-[5vw] font-rubik font-bold text-customTeal">
-            👋 Hi, I'm Keith 👋
-          </h1>
-          <h2 className="text-[3vw] font-rubik text-customTealLight">
-            &lt;Junior Developer/&gt;
-          </h2>
+        <div data-depth="0.30" className="absolute inset-0 w-full h-full">
+          <motion.img
+            src={keys}
+            alt="Background Keys"
+            className="w-full h-full object-contain top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            animate={floatingAnimation}
+          />
         </div>
-        <img
-          src={scrollDown}
-          alt=""
-          className="w-[5%] absolute bottom-10 sm:relative sm:top-[1vw]"
-        />
+      </div>
+
+      <div className="flex flex-col items-center justify-center h-screen absolute inset-0 z-10 sm:-mt-2">
+        <div className="text-center">
+          <h1 className="text-[5vw] sm:text-[4vw] font-rubik font-semibold leading-none text-customTeal">
+            Hi, I'm Keith 👋
+          </h1>
+          <div className="bg-customTeal rounded-full sm:mt-2">
+            <h2 className="mt-2 text-[3vw] sm:text-[2vw] font-rubik text-white">
+              &lt; Junior Developer &gt;
+            </h2>
+          </div>
+        </div>
+        <div className="mouse absolute bottom-12 w-[30px] h-[54px] border-4 border-customTeal rounded-full">
+          <div className="mouse-wheel"></div>
+        </div>
+      </div>
+
+      <div className="flex justify-center relative w-full pt-20">
+        <div className="w-[70%] max-w-5xl">
+          <About />
+        </div>
       </div>
     </div>
   );

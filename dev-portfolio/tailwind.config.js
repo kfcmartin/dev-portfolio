@@ -12,6 +12,7 @@ module.exports = {
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],
         satisfy: ["Satisfy", "cursive"],
+        srisakdi: ["Srisakdi", "cursive"],
       },
     },
   },

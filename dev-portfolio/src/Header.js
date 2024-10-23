@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -65,7 +64,7 @@ function Header() {
 
   return (
     <header className="flex sticky top-0 justify-between items-center pt-4 px-10 z-20 relative">
-      <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-satisfy text-customTeal">
+      <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-srisakdi font-bold text-customTeal">
         <a href="/">K</a>
       </div>
 
